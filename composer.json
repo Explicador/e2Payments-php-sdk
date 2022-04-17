@@ -1,0 +1,65 @@
+{
+    "name": "explicador/e2payments-php-sdk",
+    "description": "Pacote de integração de pagamentos online por MPesa, eMola, MKesh, conta móvel, BIM, Master Card e mais",
+    "keywords": [
+        "e2payments",
+        "explicador",
+        "jose-seie",
+        "mpesa-sdk",
+        "mpesa-api",
+        "mpesa",
+        "emola",
+        "mkesh",
+        "visa",
+        "master-card",
+        "payment-solution",
+        "vodacom-mozambique",
+        "payment-integration",
+        "payment-gateway"
+    ],
+    "homepage": "https://github.com/explicador/e2payments-php-sdk",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Explicador Team",
+            "email": "developers@explicador.co.mz",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.3",
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Explicador\\E2PaymentsPhpSdk\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Explicador\\E2PaymentsPhpSdk\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Explicador\\E2PaymentsPhpSdk\\Providers\\ServiceProvider"
+            ],
+            "aliases": {
+                "E2Payments": "Explicador\\E2PaymentsPhpSdk\\Facade"
+            }
+        }
+    }
+}
