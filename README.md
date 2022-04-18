@@ -29,6 +29,38 @@ $mpesa->setWalletId('your walletId from e2payments');// 'live' production enviro
 $result = $mpesa->c2b($phone_number, $amount, $reference);
 ```
 
+## Example
+
+``` php
+// Your variable
+
+// The e2payments is REST API based platform
+// find or create your credential from: https://e2payments.explicador.co.mz/admin/credentials
+
+$client_id = 'oQPGhzqyDRilpzvTT6g0nhSeomVQ9G7zZrvY4v00'; //you must change
+$client_secret = '961022ed-08f6-4980-a1b3-f017fd15b800'; //you must change
+
+// find your wallet_id from: https://e2payments.explicador.co.mz/admin/mpesa
+// or in the organizations where you where invited 
+// The wallet_id starts by (#), insert here without (#)
+
+$wallet_id = '111111'; //you must change
+ 
+// SDK initiation for mpesa transaction
+$mpesa = new \Explicador\E2paymentsPhpSdk\Mpesa([
+   'client_secret' => $client_secret,
+   'client_id'     => $client_id,
+   'wallet_id'     => $wallet_id,
+]);
+
+//This creates transaction between an M-Pesa short code to a phone number registered on M-Pesa.
+$result = $mpesa->c2b($phone_number, $amount, $reference);
+
+echo var_dump($result);
+
+
+```
+
 ### Testing
 
 ``` bash
@@ -45,7 +77,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ### Security
 
-If you discover any security related issues, please email karson@turbohost.co instead of using the issue tracker.
+If you discover any security related issues, please email developers@explicador.co.mz instead of using the issue tracker.
 
 ## Credits
 
