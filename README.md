@@ -5,6 +5,10 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/explicador/e2payments-php-sdk.svg?style=flat-square)](https://scrutinizer-ci.com/g/explicador/e2payments-php-sdk)
 [![Total Downloads](https://img.shields.io/packagist/dt/explicador/e2payments-php-sdk.svg?style=flat-square)](https://packagist.org/packages/explicador/e2payments-php-sdk)
 
+
+[![Plataforma e2Payments](https://e2payments.explicador.co.mz/landing/img/app-desktop-demo-screenshot6-1.PNG "A forma simples de integrar pagamentos online")](https://e2payments.explicador.co.mz)
+
+
 This package seeks to help php developers implement the [e2Payments](https://e2payments.explicador.co.mz) APIs without much hustle. It is based on the REST API whose documentation is available on [https://e2payments.explicador.co.mz/docs](https://e2payments.explicador.co.mz/docs).
 
 ## Installation
@@ -41,7 +45,7 @@ $client_id = 'oQPGhzqyDRilpzvTT6g0nhSeomVQ9G7zZrvY4v00'; //you must change
 $client_secret = '961022ed-08f6-4980-a1b3-f017fd15b800'; //you must change
 
 // find your wallet_id from: https://e2payments.explicador.co.mz/admin/mpesa
-// or in the organizations where you where invited 
+// or in the organizations where you were invited 
 // The wallet_id starts by (#), insert here without (#)
 
 $wallet_id = '111111'; //you must change
@@ -60,6 +64,17 @@ echo var_dump($result);
 
 
 ```
+
+### Common HTTP Errors
+
+| HTTP Status Code	 | Description | Explanation |
+| --- | ---| ---|
+| 200 | OK | Request Executed successfully and stored in e2Payments Platform |
+| 201 | Added | The transaction executed successfully and stored in e2Payments Platform |
+| 400 | Bad Request | Wallet, origin or other mpesa issues |
+| 401 | Unauthenticated | Client ID or Client Secret issues |
+| 500 | Server error | If this happens please, report to Explicador Team. |
+
 
 ### Testing
 
