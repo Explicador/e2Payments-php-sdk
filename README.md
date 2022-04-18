@@ -32,7 +32,7 @@ $result = $mpesa->c2b($phone_number, $amount, $reference);
 ## Example
 
 ``` php
-// Your variable
+// Your variables
 
 // The e2payments is REST API based platform
 // find or create your credential from: https://e2payments.explicador.co.mz/admin/credentials
