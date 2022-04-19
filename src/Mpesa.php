@@ -45,7 +45,7 @@ class Mpesa
      * @param string $reference
      * @return \stdClass
      */
-    function c2b($phone, $amount, $reference = 'Mpesae2Payments')
+    public function c2b($phone, $amount, $reference = 'Mpesae2Payments')
     {
 
         $fields = [
