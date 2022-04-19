@@ -65,13 +65,14 @@ echo var_dump($result);
 
 ```
 
-### Common HTTP Errors
+### Common HTTP Status Codes
 
-| HTTP Status Code	 | Description | Explanation |
+| Status Code	 | Description | Explanation |
 | --- | ---| ---|
 | 200 | OK | Request Executed successfully and stored in e2Payments Platform |
 | 201 | Added | The transaction executed successfully and stored in e2Payments Platform |
 | 400 | Bad Request | Wallet, origin or other mpesa issues |
+| 403 | Forbidden | If the Wallet ID does not exists or does not belongs to the user (if walletId belongs to some organization, the user must be invited) |
 | 401 | Unauthenticated | Client ID or Client Secret issues |
 | 500 | Server error | If this happens please, report to Explicador Team. |
 
