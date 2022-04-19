@@ -37,10 +37,10 @@ class ServiceProvider extends BaseServiceProvider
 
             $mpesa =  new \Explicador\E2PaymentsPhpSdk\Mpesa();
 
-            $mpesa->setClientSecret(conig('e2payments.client_secret'));
-            $mpesa->setClientId(conig('e2payments.client_id'));//test
+            $mpesa->setClientSecret(config('e2payments.client_secret'));
+            $mpesa->setClientId(config('e2payments.client_id'));//test
 
-            $mpesa->setWalletId(conig('e2payments.walled_id'));
+            $mpesa->setWalletId(config('e2payments.walled_id'));
 
             return $mpesa;
         });
