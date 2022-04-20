@@ -179,7 +179,32 @@ class Mpesa
     }
 
 
-    private function actualUrl () {
-        return (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]"; // TODO: SECURE WAY TO GET THIS...
+ function actualUrl () {
+	 
+	 $scheme = "";
+    if ( isset( $_SERVER['HTTPS'] ) ) {
+        if ( 'on' == strtolower( $_SERVER['HTTPS'] ) ) {
+            $scheme = "https://";
+        }
+
+        if ( '1' == $_SERVER['HTTPS'] ) {
+            $scheme = "https://";
+        }
+    } elseif ( isset( $_SERVER['SERVER_PORT'] ) && ( '443' == $_SERVER['SERVER_PORT'] ) ) {
+        $scheme = "https://";
+		echo $scheme;
+    }else{
+        $scheme = "http://";
     }
+	
+	 if(isset($_SERVER['HTTP_HOST']) && isset($_SERVER['REQUEST_URI'])){
+        $Url = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+    }elseif (isset($_SERVER['SERVER_NAME']) && isset($_SERVER['REQUEST_URI'])){
+        $Url = $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
+    }
+	$Url = str_replace('/','',$Url);
+    return $scheme.$Url;
+ }
+ 	
+	//echo actualUrl(); Imprimir o endereço (Apenas para testes)
 }
